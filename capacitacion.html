@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Capacitación inclusiva de Hipoteca Azul para comunidades sin acceso a agua, adaptada a personas con discapacidad">
+    <title>Capacitación Inclusiva | Hipoteca Azul</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#3380FF',
+                            600: '#0057CC',
+                            700: '#004299',
+                        },
+                        secondary: {
+                            500: '#1AD6C2',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos accesibles */
+        .btn-primary {
+            @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+        }
+        .btn-secondary {
+            @apply bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+        }
+        .nav-link {
+            @apply text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors px-1 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded;
+        }
+        .nav-link.active {
+            @apply text-primary-600 dark:text-primary-400 font-medium;
+        }
+        .mobile-nav-link {
+            @apply block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 rounded;
+        }
+        .mobile-nav-link.active {
+            @apply text-primary-600 dark:text-primary-400 font-medium;
+        }
+        .high-contrast {
+            --tw-contrast: contrast(1.5);
+            filter: var(--tw-contrast);
+        }
+    </style>
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200">
+    <!-- Accesibilidad - Barra de herramientas -->
+    <div id="accessibility-toolbar" class="bg-gray-100 dark:bg-gray-800 py-2 px-4 text-sm hidden md:block">
+        <div class="container mx-auto flex justify-end items-center space-x-4">
+            <button id="toggle-high-contrast" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar alto contraste">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </button>
+            <button id="font-size-increase" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Aumentar tamaño de letra">A+</button>
+            <button id="font-size-decrease" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Disminuir tamaño de letra">A-</button>
+            <button id="toggle-dark-mode" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar modo oscuro">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+            <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-1 px-3 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 ml-2">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Header & Navegación -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto">
+            <nav class="flex justify-between items-center py-4 px-4">
+                <a href="index.html" class="flex items-center space-x-2" aria-label="Hipoteca Azul - Inicio">
+                    <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-12 w-auto" width="48" height="48">
+                    <span class="font-bold text-xl text-primary-600 dark:text-primary-400">Hipoteca Azul</span>
+                </a>
+                
+                <!-- Navegación escritorio -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
+                    <a href="servicios.html" class="nav-link">Servicios</a>
+                    <a href="beneficios.html" class="nav-link">Beneficios</a>
+                    <a href="capacitacion.html" class="nav-link active" aria-current="page">Capacitación</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">Contacto</a>
+                </div>
+                
+                <!-- Botón menú móvil -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none focus:ring-2 focus:ring-primary-500 p-2 rounded-md" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Navegación móvil -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4 px-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="mobile-nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="mobile-nav-link">Sobre Nosotros</a>
+                    <a href="servicios.html" class="mobile-nav-link">Servicios</a>
+                    <a href="beneficios.html" class="mobile-nav-link">Beneficios</a>
+                    <a href="capacitacion.html" class="mobile-nav-link active" aria-current="page">Capacitación</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-md text-center">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cabecera de página -->
+        <section class="bg-primary-600 text-white py-12 md:py-20">
+            <div class="container mx-auto px-4">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">Capacitación Inclusiva</h1>
+                <p class="text-lg max-w-3xl mx-auto text-center">Talleres accesibles para todos, diseñados con metodologías inclusivas para personas con discapacidad</p>
+            </div>
+        </section>
+        
+        <!-- Sección de Metodología Inclusiva -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6">Nuestra Metodología Inclusiva</h2>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">En Hipoteca Azul, hemos desarrollado una metodología de capacitación inclusiva que garantiza la participación plena de todas las personas, independientemente de su condición física, sensorial o intelectual.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 dark:text-gray-300">Materiales accesibles en múltiples formatos: impreso, digital, audio y Braille</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 dark:text-gray-300">Espacios de capacitación físicamente accesibles, sin barreras arquitectónicas</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 dark:text-gray-300">Intérpretes de Lengua de Señas Mexicana disponibles en todos los talleres</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 dark:text-gray-300">Ritmo de aprendizaje adaptado a las necesidades de cada participante</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="Imagenes/image (8).png" alt="Sesión de capacitación inclusiva" class="rounded-lg shadow-xl w-full h-auto" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Tipos de Capacitación -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Nuestros Programas de Capacitación</h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Desarrollamos programas específicos que responden a las necesidades de cada comunidad</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Mantenimiento de Sistemas de Agua</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Capacitación práctica sobre la instalación, operación y mantenimiento de sistemas de captación, purificación y distribución de agua.</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Implementación de Ecotecnias</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Talleres prácticos sobre tecnologías sostenibles como captación de agua pluvial, purificación solar y sistemas de riego eficiente.</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Liderazgo Comunitario</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Programas para desarrollar habilidades de liderazgo, organización comunitaria y gestión colectiva del agua, con enfoque especial en la inclusión.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Materiales Adaptados -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Materiales Adaptados</h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Desarrollamos recursos educativos para asegurar que todas las personas puedan participar plenamente</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Para personas con discapacidad visual</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Manuales en Braille
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Audiolibros y podcasts con instrucciones detalladas
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Modelos tridimensionales de sistemas hídricos
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Para personas con discapacidad auditiva</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Videos con subtítulos y Lengua de Señas Mexicana
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Aplicación móvil con instrucciones visuales
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Infografías y guías visuales paso a paso
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA - Inscripción a programas -->
+        <section class="py-16 bg-primary-600 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Quieres participar en nuestros programas?</h2>
+                    <p class="mb-8">Inscríbete a nuestros talleres de capacitación inclusiva y aprende a implementar soluciones de agua sostenibles en tu comunidad.</p>
+                    <a href="contacto.html" class="bg-white text-primary-600 hover:bg-gray-100 font-medium py-2 px-6 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-white inline-block">Inscribirme ahora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between flex-col md:flex-row">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-10 w-auto" width="40" height="40">
+                        <span class="font-bold text-lg text-white">Hipoteca Azul</span>
+                    </div>
+                    <p class="text-gray-400">Transformando vidas a través del acceso al agua.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Contacto</h3>
+                    <p class="text-gray-400">omararquitect@gmail.com</p>
+                    <p class="text-gray-400">+52 722 173 6473</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Hipoteca Azul. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>

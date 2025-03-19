@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Hipoteca Azul para información sobre financiamiento y capacitación inclusiva para el acceso al agua">
+    <title>Contacto | Hipoteca Azul</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#3380FF',
+                            600: '#0057CC',
+                            700: '#004299',
+                        },
+                        secondary: {
+                            500: '#1AD6C2',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos accesibles */
+        .btn-primary {
+            background-color: var(--tw-color-primary-600);
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition-property: color, background-color;
+        }
+        .btn-primary:hover {
+            background-color: var(--tw-color-primary-700);
+        }
+        .btn-primary:focus {
+            outline: none;
+            --tw-ring-offset-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            --tw-ring-offset-color: var(--tw-ring-offset-width, 0) solid #fff;
+        }
+        
+        .nav-link {
+            color: var(--tw-gray-700);
+            padding: 0.5rem 0.25rem;
+            transition-property: color;
+        }
+        .dark .nav-link {
+            color: var(--tw-gray-300);
+        }
+        .nav-link:hover {
+            color: var(--tw-color-primary-600);
+        }
+        .dark .nav-link:hover {
+            color: var(--tw-color-primary-400);
+        }
+        .nav-link:focus {
+            outline: none;
+            --tw-ring-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            border-radius: 0.25rem;
+        }
+        
+        .nav-link.active {
+            color: var(--tw-color-primary-600);
+            font-weight: 500;
+        }
+        .dark .nav-link.active {
+            color: var(--tw-color-primary-400);
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--tw-gray-700);
+            transition-property: color;
+        }
+        .dark .mobile-nav-link {
+            color: var(--tw-gray-300);
+        }
+        .mobile-nav-link:hover {
+            color: var(--tw-color-primary-600);
+        }
+        .dark .mobile-nav-link:hover {
+            color: var(--tw-color-primary-400);
+        }
+        .mobile-nav-link:focus {
+            outline: none;
+            --tw-ring-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            border-radius: 0.25rem;
+        }
+        
+        .mobile-nav-link.active {
+            color: var(--tw-color-primary-600);
+            font-weight: 500;
+        }
+        .dark .mobile-nav-link.active {
+            color: var(--tw-color-primary-400);
+        }
+        
+        .high-contrast {
+            --tw-contrast: contrast(1.5);
+            filter: var(--tw-contrast);
+        }
+        
+        /* Estilos para inputs accesibles */
+        .form-input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.375rem;
+            background-color: #fff;
+            color: #1a202c;
+            transition: border-color 0.15s ease-in-out;
+        }
+        
+        .dark .form-input {
+            background-color: #2d3748;
+            border-color: #4a5568;
+            color: #e2e8f0;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #3380FF;
+            box-shadow: 0 0 0 3px rgba(51, 128, 255, 0.2);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        
+        .dark .form-label {
+            color: var(--tw-gray-300);
+        }
+    </style>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200">
+    <!-- Accesibilidad - Barra de herramientas -->
+    <div id="accessibility-toolbar" class="bg-gray-100 dark:bg-gray-800 py-2 px-4 text-sm hidden md:block">
+        <div class="container mx-auto flex justify-end items-center space-x-4">
+            <button id="toggle-high-contrast" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar alto contraste">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </button>
+            <button id="font-size-increase" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Aumentar tamaño de letra">A+</button>
+            <button id="font-size-decrease" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Disminuir tamaño de letra">A-</button>
+            <button id="toggle-dark-mode" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar modo oscuro">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header & Navegación -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto">
+            <nav class="flex justify-between items-center py-4 px-4">
+                <a href="index.html" class="flex items-center space-x-2" aria-label="Hipoteca Azul - Inicio">
+                    <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-12 w-auto" width="48" height="48">
+                    <span class="font-bold text-xl text-primary-600 dark:text-primary-400">Hipoteca Azul</span>
+                </a>
+                
+                <!-- Navegación escritorio -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
+                    <a href="servicios.html" class="nav-link">Servicios</a>
+                    <a href="beneficios.html" class="nav-link">Beneficios</a>
+                    <a href="capacitacion.html" class="nav-link">Capacitación</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contacto.html" class="btn-primary hover:bg-primary-700 py-2 px-4 rounded-md active" aria-current="page">Contacto</a>
+                </div>
+                
+                <!-- Botón menú móvil -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none focus:ring-2 focus:ring-primary-500 p-2 rounded-md" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Navegación móvil -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4 px-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="mobile-nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="mobile-nav-link">Sobre Nosotros</a>
+                    <a href="servicios.html" class="mobile-nav-link">Servicios</a>
+                    <a href="beneficios.html" class="mobile-nav-link">Beneficios</a>
+                    <a href="capacitacion.html" class="mobile-nav-link">Capacitación</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contacto.html" class="btn-primary text-center active" aria-current="page">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cabecera de página -->
+        <section class="bg-primary-600 text-white py-12 md:py-20">
+            <div class="container mx-auto px-4">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">Contacto</h1>
+                <p class="text-lg max-w-3xl mx-auto text-center">Estamos aquí para responder tus preguntas y ayudar a tu comunidad</p>
+            </div>
+        </section>
+        
+        <!-- Información de contacto y formulario -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Información de contacto -->
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6">Información de contacto</h2>
+                        <p class="text-gray-700 dark:text-gray-300 mb-8">Puedes contactarnos por los siguientes medios o utilizar nuestro formulario para enviarnos un mensaje directo.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">Correo electrónico</h3>
+                                    <p class="text-gray-700 dark:text-gray-300">omararquitect@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">Teléfono</h3>
+                                    <p class="text-gray-700 dark:text-gray-300">+52 722 173 6473</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-lg mb-1">Oficina principal</h3>
+                                    <p class="text-gray-700 dark:text-gray-300">Ciudad de México, México</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Horario de atención -->
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mt-8">
+                                <h3 class="font-semibold text-lg mb-3">Horario de atención</h3>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-700 dark:text-gray-300">Lunes - Viernes:</span>
+                                        <span class="text-gray-700 dark:text-gray-300">9:00 AM - 6:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-700 dark:text-gray-300">Sábado:</span>
+                                        <span class="text-gray-700 dark:text-gray-300">10:00 AM - 2:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-700 dark:text-gray-300">Domingo:</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Cerrado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulario de contacto -->
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                        <h2 class="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="nombre" class="form-label">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" class="form-input" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div>
+                                <label for="telefono" class="form-label">Teléfono (opcional)</label>
+                                <input type="tel" id="telefono" name="telefono" class="form-input">
+                            </div>
+                            
+                            <div>
+                                <label for="asunto" class="form-label">Asunto</label>
+                                <select id="asunto" name="asunto" class="form-input" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="financiamiento">Financiamiento</option>
+                                    <option value="capacitacion">Capacitación</option>
+                                    <option value="proyectos">Implementación de proyectos</option>
+                                    <option value="colaboracion">Oportunidades de colaboración</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" class="form-input" required></textarea>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="terminos" name="terminos" type="checkbox" class="h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500" required>
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="terminos" class="font-medium text-gray-700 dark:text-gray-300">Acepto los términos y condiciones y la política de privacidad</label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="btn-primary w-full py-3">Enviar mensaje</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mapa de ubicación -->
+        <section class="py-16 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8 text-center">Nuestra ubicación</h2>
+                <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                    <!-- Aquí iría un mapa, pero como placeholder usamos una imagen responsiva -->
+                    <div class="bg-gray-200 dark:bg-gray-600 w-full h-96 rounded flex items-center justify-center">
+                        <p class="text-gray-500 dark:text-gray-400 text-center">Mapa de ubicación de nuestras oficinas<br>Ciudad de México, México</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Preguntas frecuentes -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8 text-center">Preguntas frecuentes</h2>
+                
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-2">¿Cómo puedo solicitar financiamiento para mi comunidad?</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Para solicitar financiamiento, puedes contactarnos a través del formulario en esta página o enviarnos un correo electrónico con la descripción de tu proyecto y necesidades específicas. Nuestro equipo evaluará la solicitud y se pondrá en contacto contigo para iniciar el proceso.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-2">¿Ofrecen capacitación en línea o debe ser presencial?</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Ofrecemos ambas modalidades de capacitación. Contamos con programas presenciales que se adaptan a las necesidades de cada comunidad, así como formación en línea para quienes tienen acceso a internet. Nuestros materiales están diseñados para ser inclusivos y accesibles.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-2">¿Cuánto tiempo toma implementar un proyecto en una comunidad?</h3>
+                        <p class="text-gray-700 dark:text-gray-300">El tiempo de implementación varía según la complejidad del proyecto, el tamaño de la comunidad y las condiciones geográficas. En promedio, un proyecto pequeño puede implementarse en 3-6 meses, mientras que proyectos más grandes pueden tomar entre 6-12 meses.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-2">¿Trabajan con comunidades fuera de México?</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Actualmente nuestro enfoque principal está en comunidades dentro de México, pero estamos abiertos a colaboraciones internacionales, especialmente en América Latina. Si tu comunidad se encuentra fuera de México, contáctanos para explorar posibilidades de colaboración.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between flex-col md:flex-row">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-10 w-auto" width="40" height="40">
+                        <span class="font-bold text-lg text-white">Hipoteca Azul</span>
+                    </div>
+                    <p class="text-gray-400">Transformando vidas a través del acceso al agua.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Contacto</h3>
+                    <p class="text-gray-400">omararquitect@gmail.com</p>
+                    <p class="text-gray-400">+52 722 173 6473</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Hipoteca Azul. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* Estilos principales para Hipoteca Azul */
+
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilos de navegación */
+.nav-link {
+    color: #374151; /* text-gray-700 */
+    transition-property: color;
+    transition-duration: 150ms;
+}
+
+.dark .nav-link {
+    color: #D1D5DB; /* dark:text-gray-300 */
+}
+
+.nav-link:hover {
+    color: #0057CC; /* text-primary-600 */
+}
+
+.dark .nav-link:hover {
+    color: #60A5FA; /* dark:text-primary-400 */
+}
+
+.nav-link.active {
+    color: #0057CC; /* text-primary-600 */
+    font-weight: 500; /* font-medium */
+}
+
+.dark .nav-link.active {
+    color: #60A5FA; /* dark:text-primary-400 */
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    color: #374151; /* text-gray-700 */
+    transition-property: background-color, color;
+    transition-duration: 150ms;
+    width: 100%;
+    text-align: left;
+}
+
+.dark .mobile-nav-link {
+    color: #D1D5DB; /* dark:text-gray-300 */
+}
+
+.mobile-nav-link:hover {
+    background-color: #F3F4F6; /* hover:bg-gray-100 */
+}
+
+.dark .mobile-nav-link:hover {
+    background-color: #374151; /* dark:hover:bg-gray-700 */
+}
+
+.mobile-nav-link.active {
+    background-color: #F3F4F6; /* bg-gray-100 */
+    color: #0057CC; /* text-primary-600 */
+    font-weight: 500; /* font-medium */
+}
+
+.dark .mobile-nav-link.active {
+    background-color: #374151; /* dark:bg-gray-700 */
+    color: #60A5FA; /* dark:text-primary-400 */
+}
+
+/* Botones y componentes interactivos */
+.btn-primary {
+    background-color: #0057CC; /* bg-primary-600 */
+    color: white;
+    font-weight: 500; /* font-medium */
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.375rem; /* rounded-md */
+    transition-property: background-color;
+    transition-duration: 150ms;
+}
+
+.btn-primary:hover {
+    background-color: #004299; /* hover:bg-primary-700 */
+}
+
+.btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3380FF, 0 0 0 4px white; /* ring-2 ring-primary-500 ring-offset-2 */
+}
+
+.btn-secondary {
+    background-color: #1AD6C2; /* bg-secondary-500 */
+    color: white;
+    font-weight: 500; /* font-medium */
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.375rem; /* rounded-md */
+    transition-property: background-color;
+    transition-duration: 150ms;
+}
+
+.btn-secondary:hover {
+    background-color: #15b8a6; /* hover:bg-secondary-600 */
+}
+
+.btn-secondary:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #1AD6C2, 0 0 0 4px white; /* ring-2 ring-secondary-500 ring-offset-2 */
+}
+
+.btn-outline-white {
+    border: 2px solid white;
+    color: white;
+    font-weight: 500; /* font-medium */
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.375rem; /* rounded-md */
+    transition-property: background-color, color;
+    transition-duration: 150ms;
+}
+
+.btn-outline-white:hover {
+    background-color: white;
+    color: #004299; /* text-primary-700 */
+}
+
+.btn-outline-white:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white; /* ring-2 ring-white */
+}
+
+/* Estilos para accesibilidad */
+.high-contrast {
+    background-color: black;
+    color: white;
+}
+
+.high-contrast a:not(.btn-primary):not(.btn-secondary) {
+    color: #FBBF24; /* text-yellow-300 */
+    text-decoration: underline;
+}
+
+.high-contrast img {
+    border: 2px solid white;
+}
+
+/* Estilos para tarjetas y secciones */
+.feature-card {
+    background-color: white; /* bg-white */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    transition-property: all;
+    transition-duration: 150ms;
+}
+
+.dark .feature-card {
+    background-color: #1F2937; /* dark:bg-gray-800 */
+}
+
+.feature-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-lg */
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem; /* p-6 */
+    background-color: white; /* bg-white */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+.dark .stat-card {
+    background-color: #1F2937; /* dark:bg-gray-800 */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+}

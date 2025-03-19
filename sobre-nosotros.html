@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conozca más sobre Hipoteca Azul: nuestra misión, visión y valores en la búsqueda de soluciones de agua para comunidades vulnerables">
+    <title>Sobre Nosotros | Hipoteca Azul</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#3380FF', /* Azul principal */
+                            600: '#0057CC',
+                            700: '#004299',
+                        },
+                        secondary: {
+                            500: '#1AD6C2', /* Verde agua secundario */
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos accesibles */
+        .btn-primary {
+            @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+        }
+        .btn-secondary {
+            @apply bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+        }
+        .btn-outline-white {
+            @apply border-2 border-white text-white hover:bg-white hover:text-primary-700 font-medium py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-white;
+        }
+        .btn-white {
+            @apply bg-white text-primary-600 hover:bg-gray-100 font-medium py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-white;
+        }
+        .btn-text {
+            @apply text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium inline-flex items-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 rounded;
+        }
+        .nav-link {
+            @apply text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors px-1 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded;
+        }
+        .nav-link.active {
+            @apply text-primary-600 dark:text-primary-400 font-medium;
+        }
+        .mobile-nav-link {
+            @apply block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 rounded;
+        }
+        .mobile-nav-link.active {
+            @apply text-primary-600 dark:text-primary-400 font-medium;
+        }
+        /* Clase para el modo de alto contraste */
+        .high-contrast {
+            --tw-contrast: contrast(1.5);
+            filter: var(--tw-contrast);
+        }
+    </style>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200">
+    <!-- Accesibilidad - Barra de herramientas -->
+    <div id="accessibility-toolbar" class="bg-gray-100 dark:bg-gray-800 py-2 px-4 text-sm hidden md:block">
+        <div class="container mx-auto flex justify-end items-center space-x-4">
+            <button id="toggle-high-contrast" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar alto contraste">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </button>
+            <button id="font-size-increase" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Aumentar tamaño de letra">A+</button>
+            <button id="font-size-decrease" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Disminuir tamaño de letra">A-</button>
+            <button id="toggle-dark-mode" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar modo oscuro">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+            <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-1 px-3 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 ml-2">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Header & Navegación -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto">
+            <nav class="flex justify-between items-center py-4 px-4">
+                <a href="index.html" class="flex items-center space-x-2" aria-label="Hipoteca Azul - Inicio">
+                    <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-12 w-auto" width="48" height="48">
+                    <span class="font-bold text-xl text-primary-600 dark:text-primary-400">Hipoteca Azul</span>
+                </a>
+                
+                <!-- Navegación escritorio -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="nav-link active" aria-current="page">Sobre Nosotros</a>
+                    <a href="servicios.html" class="nav-link">Servicios</a>
+                    <a href="beneficios.html" class="nav-link">Beneficios</a>
+                    <a href="capacitacion.html" class="nav-link">Capacitación</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">Contacto</a>
+                </div>
+                
+                <!-- Botón menú móvil -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none focus:ring-2 focus:ring-primary-500 p-2 rounded-md" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Navegación móvil -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4 px-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="mobile-nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="mobile-nav-link active" aria-current="page">Sobre Nosotros</a>
+                    <a href="servicios.html" class="mobile-nav-link">Servicios</a>
+                    <a href="beneficios.html" class="mobile-nav-link">Beneficios</a>
+                    <a href="capacitacion.html" class="mobile-nav-link">Capacitación</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-md text-center">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cabecera de página -->
+        <section class="bg-primary-600 text-white py-12 md:py-20">
+            <div class="container mx-auto px-4">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">Sobre Nosotros</h1>
+                <p class="text-lg max-w-3xl mx-auto text-center">Conoce nuestra misión, visión y los valores que impulsan nuestro compromiso con las comunidades sin acceso al agua</p>
+            </div>
+        </section>
+        
+        <!-- Sección Misión y Visión -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6">Nuestra Misión</h2>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">En Hipoteca Azul, nuestra misión es brindar soluciones financieras y capacitación inclusiva a comunidades sin acceso al agua, con especial enfoque en las personas con discapacidad. Trabajamos para garantizar que todas las personas tengan acceso a este recurso vital, independientemente de su condición.</p>
+                        <p class="text-gray-700 dark:text-gray-300">Buscamos transformar la vida de las comunidades vulnerables mediante la implementación de ecotecnias sostenibles y el empoderamiento a través de la capacitación inclusiva, asegurando un futuro más justo y equitativo para todos.</p>
+                    </div>
+                    <div class="order-first md:order-last">
+                        <img src="Imagenes/image (4).png" alt="Equipo de Hipoteca Azul trabajando con una comunidad" class="rounded-lg shadow-xl w-full h-auto" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
+                    <div>
+                        <img src="Imagenes/image (8).png" alt="Proyección futura de comunidades con acceso al agua" class="rounded-lg shadow-xl w-full h-auto" loading="lazy">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6">Nuestra Visión</h2>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">Visualizamos un México donde todas las comunidades, sin excepción, tengan acceso digno y sostenible al agua potable. Un país donde las personas con discapacidad participen plenamente en la gestión de recursos hídricos y el desarrollo comunitario.</p>
+                        <p class="text-gray-700 dark:text-gray-300">Aspiramos a ser reconocidos como líderes en la implementación de soluciones financieras inclusivas y ecotecnias que promuevan la autonomía de las comunidades y el cuidado del medio ambiente, contribuyendo a un futuro más equitativo y sostenible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Valores -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Nuestros Valores</h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Los principios que guían nuestras acciones y decisiones cada día</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Inclusión</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Diseñamos nuestros programas y servicios para ser accesibles a todas las personas, independientemente de su condición física, sensorial o intelectual. Creemos en la participación plena de todos en la sociedad.</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Sostenibilidad</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Promovemos soluciones que respetan el medio ambiente y garantizan el uso responsable de los recursos hídricos. Nos comprometemos con el desarrollo de proyectos que sean sostenibles a largo plazo.</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Transparencia</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Operamos con total transparencia en la gestión de recursos, la toma de decisiones y la comunicación con nuestros beneficiarios y aliados. Rendimos cuentas y compartimos nuestros resultados de manera clara.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Equipo -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Nuestro Equipo</h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Profesionales comprometidos con la inclusión y el acceso al agua</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md">
+                        <img src="Imagenes/Omar.jpg" alt="Foto de Omar Flores Estrada" class="w-full h-64 object-contain" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1">Omar Flores Estrada</h3>
+                            <p class="text-primary-600 dark:text-primary-400 mb-3">Director General</p>
+                            <p class="text-gray-600 dark:text-gray-300">Especialista en desarrollo sostenible y arquitectura con amplia experiencia en proyectos de acceso al agua en comunidades vulnerables.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md">
+                        <img src="Imagenes/Omar.jpg" alt="Foto de Omar Flores Estrada" class="w-full h-64 object-contain" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1">Omar Flores Estrada</h3>
+                            <p class="text-primary-600 dark:text-primary-400 mb-3">Director de Capacitación</p>
+                            <p class="text-gray-600 dark:text-gray-300">Experto en arquitectura inclusiva y diseño de programas de capacitación accesibles. Desarrolla metodologías adaptadas para personas con diferentes tipos de discapacidad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md">
+                        <img src="Imagenes/Jose enrique .jpg" alt="Foto de Jose Enrique Flores Estrada" class="w-full h-64 object-contain" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-1">Jose Enrique Flores Estrada</h3>
+                            <p class="text-primary-600 dark:text-primary-400 mb-3">Director Financiero</p>
+                            <p class="text-gray-600 dark:text-gray-300">Especialista en microfinanzas y diseño de productos financieros sociales. Lidera el programa de financiamiento para acceso al agua en comunidades rurales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between flex-col md:flex-row">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-10 w-auto" width="40" height="40">
+                        <span class="font-bold text-lg text-white">Hipoteca Azul</span>
+                    </div>
+                    <p class="text-gray-400">Transformando vidas a través del acceso al agua.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Contacto</h3>
+                    <p class="text-gray-400">omararquitect@gmail.com</p>
+                    <p class="text-gray-400">+52 722 173 6473</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Hipoteca Azul. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>

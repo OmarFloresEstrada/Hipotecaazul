@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubra los beneficios del programa Hipoteca Azul para comunidades sin acceso al agua">
+    <title>Beneficios | Hipoteca Azul</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#3380FF',
+                            600: '#0057CC',
+                            700: '#004299',
+                        },
+                        secondary: {
+                            500: '#1AD6C2',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos accesibles */
+        .btn-primary {
+            background-color: var(--tw-color-primary-600);
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition-property: color, background-color;
+        }
+        .btn-primary:hover {
+            background-color: var(--tw-color-primary-700);
+        }
+        .btn-primary:focus {
+            outline: none;
+            --tw-ring-offset-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            --tw-ring-offset-color: var(--tw-ring-offset-width, 0) solid #fff;
+        }
+        
+        .nav-link {
+            color: var(--tw-gray-700);
+            padding: 0.5rem 0.25rem;
+            transition-property: color;
+        }
+        .dark .nav-link {
+            color: var(--tw-gray-300);
+        }
+        .nav-link:hover {
+            color: var(--tw-color-primary-600);
+        }
+        .dark .nav-link:hover {
+            color: var(--tw-color-primary-400);
+        }
+        .nav-link:focus {
+            outline: none;
+            --tw-ring-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            border-radius: 0.25rem;
+        }
+        
+        .nav-link.active {
+            color: var(--tw-color-primary-600);
+            font-weight: 500;
+        }
+        .dark .nav-link.active {
+            color: var(--tw-color-primary-400);
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--tw-gray-700);
+            transition-property: color;
+        }
+        .dark .mobile-nav-link {
+            color: var(--tw-gray-300);
+        }
+        .mobile-nav-link:hover {
+            color: var(--tw-color-primary-600);
+        }
+        .dark .mobile-nav-link:hover {
+            color: var(--tw-color-primary-400);
+        }
+        .mobile-nav-link:focus {
+            outline: none;
+            --tw-ring-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            border-radius: 0.25rem;
+        }
+        
+        .mobile-nav-link.active {
+            color: var(--tw-color-primary-600);
+            font-weight: 500;
+        }
+        .dark .mobile-nav-link.active {
+            color: var(--tw-color-primary-400);
+        }
+        
+        .high-contrast {
+            --tw-contrast: contrast(1.5);
+            filter: var(--tw-contrast);
+        }
+    </style>
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200">
+    <!-- Accesibilidad - Barra de herramientas -->
+    <div id="accessibility-toolbar" class="bg-gray-100 dark:bg-gray-800 py-2 px-4 text-sm hidden md:block">
+        <div class="container mx-auto flex justify-end items-center space-x-4">
+            <button id="toggle-high-contrast" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar alto contraste">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </button>
+            <button id="font-size-increase" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Aumentar tamaño de letra">A+</button>
+            <button id="font-size-decrease" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Disminuir tamaño de letra">A-</button>
+            <button id="toggle-dark-mode" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar modo oscuro">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 01-8.354-5.646z" />
+                </svg>
+            </button>
+            <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-1 px-3 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 ml-2">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Header & Navegación -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto">
+            <nav class="flex justify-between items-center py-4 px-4">
+                <a href="index.html" class="flex items-center space-x-2" aria-label="Hipoteca Azul - Inicio">
+                    <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-12 w-auto" width="48" height="48">
+                    <span class="font-bold text-xl text-primary-600 dark:text-primary-400">Hipoteca Azul</span>
+                </a>
+                
+                <!-- Navegación escritorio -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
+                    <a href="servicios.html" class="nav-link">Servicios</a>
+                    <a href="beneficios.html" class="nav-link active" aria-current="page">Beneficios</a>
+                    <a href="capacitacion.html" class="nav-link">Capacitación</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">Contacto</a>
+                </div>
+                
+                <!-- Botón menú móvil -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none focus:ring-2 focus:ring-primary-500 p-2 rounded-md" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Navegación móvil -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4 px-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="mobile-nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="mobile-nav-link">Sobre Nosotros</a>
+                    <a href="servicios.html" class="mobile-nav-link">Servicios</a>
+                    <a href="beneficios.html" class="mobile-nav-link active" aria-current="page">Beneficios</a>
+                    <a href="capacitacion.html" class="mobile-nav-link">Capacitación</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-md text-center">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cabecera de página -->
+        <section class="bg-primary-600 text-white py-12 md:py-20">
+            <div class="container mx-auto px-4">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">Beneficios e Impacto</h1>
+                <p class="text-lg max-w-3xl mx-auto text-center">Transformando comunidades a través del acceso al agua y capacitación inclusiva</p>
+            </div>
+        </section>
+        
+        <!-- Sección de Impacto Social -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6">Impacto Social</h2>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">Nuestro programa ha generado un impacto significativo en las comunidades beneficiadas, mejorando su calidad de vida y promoviendo su desarrollo sostenible.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 dark:text-gray-300">Reducción de enfermedades relacionadas con el agua en un 70% en las comunidades beneficiadas</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 dark:text-gray-300">Mayor participación de mujeres y personas con discapacidad en la toma de decisiones comunitarias</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 dark:text-gray-300">Desarrollo de liderazgos locales para la sostenibilidad de los proyectos</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <svg class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 dark:text-gray-300">Ahorro de tiempo y recursos para las familias, especialmente para mujeres y niñas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="Imagenes/image (6).png" alt="Comunidad celebrando acceso al agua potable" class="rounded-lg shadow-xl w-full h-auto" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Beneficios para las Comunidades -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Beneficios para las Comunidades</h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Nuestros programas generan múltiples beneficios que transforman la vida de las personas</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Acceso a Agua Limpia</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Implementación de sistemas de captación, purificación y distribución de agua que garantizan el acceso a agua limpia y segura para toda la comunidad.</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Mejora en la Salud</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Disminución de enfermedades relacionadas con el agua contaminada, especialmente en niños y adultos mayores, mejorando la salud general de la comunidad.</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Oportunidades Económicas</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Desarrollo de nuevas oportunidades de empleo y emprendimiento local relacionados con la gestión del agua y las ecotecnias implementadas.</p>
+                        <div class="mt-4 bg-primary-50 dark:bg-primary-900/30 p-3 rounded-md border-l-4 border-primary-500">
+                            <p class="text-gray-700 dark:text-gray-300"><strong>¡Nuevo beneficio!</strong> Ahora puedes reducir o eliminar tu deuda trabajando directamente en proyectos de Hipoteca Azul, contribuyendo con tu tiempo y habilidades a la misión de la organización.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección Testimonios -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Testimonios de Beneficiarios</h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Historias reales de transformación en nuestras comunidades</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="Imagenes/image (13).png" alt="Foto de Rosa Martínez" class="w-16 h-16 rounded-full object-cover mr-4" loading="lazy">
+                            <div>
+                                <h3 class="font-semibold">Rosa Martínez</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Comunidad El Mirador</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-200 italic">"Antes teníamos que caminar tres horas para conseguir agua. Ahora con el sistema de captación pluvial, tenemos agua en nuestra comunidad. Los talleres también fueron muy accesibles para mí que tengo discapacidad visual, pude participar plenamente."</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="Imagenes/image (14).png" alt="Foto de Miguel Jiménez" class="w-16 h-16 rounded-full object-cover mr-4" loading="lazy">
+                            <div>
+                                <h3 class="font-semibold">Miguel Jiménez</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Comunidad Nueva Esperanza</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-200 italic">"El programa no solo nos dio acceso al agua, sino que nos capacitó para mantener el sistema. Como persona con movilidad reducida, valoro mucho que pensaran en la accesibilidad de las instalaciones y la capacitación inclusiva que recibimos."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Llamada a la acción -->
+        <section class="py-16 bg-primary-600 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Te interesa conocer más sobre nuestros beneficios?</h2>
+                    <p class="mb-8">Contáctanos para obtener más información sobre cómo nuestros programas pueden beneficiar a tu comunidad.</p>
+                    <a href="contacto.html" class="bg-white text-primary-600 hover:bg-gray-100 font-medium py-2 px-6 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-white inline-block">Contactar ahora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between flex-col md:flex-row">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-10 w-auto" width="40" height="40">
+                        <span class="font-bold text-lg text-white">Hipoteca Azul</span>
+                    </div>
+                    <p class="text-gray-400">Transformando vidas a través del acceso al agua.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Contacto</h3>
+                    <p class="text-gray-400">omararquitect@gmail.com</p>
+                    <p class="text-gray-400">+52 722 173 6473</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Hipoteca Azul. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>

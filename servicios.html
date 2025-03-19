@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios ofrecidos por Hipoteca Azul para comunidades sin acceso al agua">
+    <title>Servicios | Hipoteca Azul</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#3380FF',
+                            600: '#0057CC',
+                            700: '#004299',
+                        },
+                        secondary: {
+                            500: '#1AD6C2',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos accesibles */
+        .btn-primary {
+            background-color: var(--tw-color-primary-600);
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition-property: color, background-color;
+        }
+        .btn-primary:hover {
+            background-color: var(--tw-color-primary-700);
+        }
+        .btn-primary:focus {
+            outline: none;
+            --tw-ring-offset-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            --tw-ring-offset-color: var(--tw-ring-offset-width, 0) solid #fff;
+        }
+        
+        .nav-link {
+            color: var(--tw-gray-700);
+            padding: 0.5rem 0.25rem;
+            transition-property: color;
+        }
+        .dark .nav-link {
+            color: var(--tw-gray-300);
+        }
+        .nav-link:hover {
+            color: var(--tw-color-primary-600);
+        }
+        .dark .nav-link:hover {
+            color: var(--tw-color-primary-400);
+        }
+        .nav-link:focus {
+            outline: none;
+            --tw-ring-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            border-radius: 0.25rem;
+        }
+        
+        .nav-link.active {
+            color: var(--tw-color-primary-600);
+            font-weight: 500;
+        }
+        .dark .nav-link.active {
+            color: var(--tw-color-primary-400);
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--tw-gray-700);
+            transition-property: color;
+        }
+        .dark .mobile-nav-link {
+            color: var(--tw-gray-300);
+        }
+        .mobile-nav-link:hover {
+            color: var(--tw-color-primary-600);
+        }
+        .dark .mobile-nav-link:hover {
+            color: var(--tw-color-primary-400);
+        }
+        .mobile-nav-link:focus {
+            outline: none;
+            --tw-ring-width: 2px;
+            --tw-ring-color: var(--tw-color-primary-500);
+            border-radius: 0.25rem;
+        }
+        
+        .mobile-nav-link.active {
+            color: var(--tw-color-primary-600);
+            font-weight: 500;
+        }
+        .dark .mobile-nav-link.active {
+            color: var(--tw-color-primary-400);
+        }
+        
+        .high-contrast {
+            --tw-contrast: contrast(1.5);
+            filter: var(--tw-contrast);
+        }
+    </style>
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-200">
+    <!-- Accesibilidad - Barra de herramientas -->
+    <div id="accessibility-toolbar" class="bg-gray-100 dark:bg-gray-800 py-2 px-4 text-sm hidden md:block">
+        <div class="container mx-auto flex justify-end items-center space-x-4">
+            <button id="toggle-high-contrast" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar alto contraste">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </button>
+            <button id="font-size-increase" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Aumentar tamaño de letra">A+</button>
+            <button id="font-size-decrease" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Disminuir tamaño de letra">A-</button>
+            <button id="toggle-dark-mode" class="focus:outline-none focus:ring-2 focus:ring-primary-500 p-1 rounded-md" aria-label="Alternar modo oscuro">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+            <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-1 px-3 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 ml-2">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Header & Navegación -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto">
+            <nav class="flex justify-between items-center py-4 px-4">
+                <a href="index.html" class="flex items-center space-x-2" aria-label="Hipoteca Azul - Inicio">
+                    <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-12 w-auto" width="48" height="48">
+                    <span class="font-bold text-xl text-primary-600 dark:text-primary-400">Hipoteca Azul</span>
+                </a>
+                
+                <!-- Navegación escritorio -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
+                    <a href="servicios.html" class="nav-link active" aria-current="page">Servicios</a>
+                    <a href="beneficios.html" class="nav-link">Beneficios</a>
+                    <a href="capacitacion.html" class="nav-link">Capacitación</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">Contacto</a>
+                </div>
+                
+                <!-- Botón menú móvil -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none focus:ring-2 focus:ring-primary-500 p-2 rounded-md" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Navegación móvil -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4 px-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="mobile-nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="mobile-nav-link">Sobre Nosotros</a>
+                    <a href="servicios.html" class="mobile-nav-link active" aria-current="page">Servicios</a>
+                    <a href="beneficios.html" class="mobile-nav-link">Beneficios</a>
+                    <a href="capacitacion.html" class="mobile-nav-link">Capacitación</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    <a href="contacto.html" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-md text-center">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cabecera de página -->
+        <section class="bg-primary-600 text-white py-12 md:py-20">
+            <div class="container mx-auto px-4">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 text-center">Nuestros Servicios</h1>
+                <p class="text-lg max-w-3xl mx-auto text-center">Soluciones integrales para el acceso al agua en comunidades vulnerables</p>
+            </div>
+        </section>
+        
+        <!-- Servicios principales -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Servicios que ofrecemos</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mt-10">
+                    <!-- Servicio 1 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <div class="bg-primary-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 018 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Financiamiento Inclusivo</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Ofrecemos soluciones financieras adaptadas a las necesidades de cada comunidad, con planes de pago flexibles y accesibles.</p>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Microcréditos comunitarios
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Planes de pago adaptados
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Gestión de subvenciones
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Financiamiento por trabajo comunitario
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-gray-700 dark:text-gray-300 italic">
+                            <strong>¡Novedad!</strong> Ahora puedes financiar tu proyecto trabajando directamente en Hipoteca Azul. Contribuye con tu tiempo y habilidades para reducir o eliminar tu deuda.
+                        </p>
+                    </div>
+                    
+                    <!-- Servicio 2 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <div class="bg-primary-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 008.354-5.646z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Soluciones Técnicas</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Implementamos tecnologías apropiadas para el acceso al agua que sean sostenibles, económicas y adaptadas al contexto local.</p>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Sistemas de captación de lluvia
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Filtración y purificación
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Redes comunitarias de distribución
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Servicio 3 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                        <div class="bg-primary-600 text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Consultoría y Seguimiento</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Brindamos asesoría técnica y acompañamiento durante todo el proceso, asegurando la sostenibilidad a largo plazo.</p>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Diagnóstico comunitario
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Monitoreo de implementación
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Evaluación de impacto
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Proceso de trabajo -->
+        <section class="py-16 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">Nuestro proceso de trabajo</h2>
+                
+                <div class="grid md:grid-cols-4 gap-8">
+                    <!-- Paso 1 -->
+                    <div class="text-center">
+                        <div class="bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Diagnóstico</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Evaluamos las necesidades específicas de la comunidad y su contexto geográfico.</p>
+                    </div>
+                    
+                    <!-- Paso 2 -->
+                    <div class="text-center">
+                        <div class="bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Planificación</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Diseñamos soluciones a medida y elaboramos un plan de implementación inclusivo.</p>
+                    </div>
+                    
+                    <!-- Paso 3 -->
+                    <div class="text-center">
+                        <div class="bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Implementación</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Ejecutamos el proyecto con participación comunitaria y capacitación continua.</p>
+                    </div>
+                    
+                    <!-- Paso 4 -->
+                    <div class="text-center">
+                        <div class="bg-primary-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Seguimiento</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Proporcionamos acompañamiento a largo plazo para garantizar la sostenibilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Llamada a la acción -->
+        <section class="py-16 bg-primary-600 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas nuestros servicios?</h2>
+                    <p class="mb-8">Contáctanos para conocer cómo podemos ayudar a tu comunidad a acceder al agua de manera sostenible e inclusiva.</p>
+                    <a href="contacto.html" class="bg-white text-primary-600 hover:bg-gray-100 font-medium py-2 px-6 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-white inline-block">Contactar ahora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between flex-col md:flex-row">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="Imagenes/Logo que se tiene que poner .jpg" alt="Logo Hipoteca Azul" class="h-10 w-auto" width="40" height="40">
+                        <span class="font-bold text-lg text-white">Hipoteca Azul</span>
+                    </div>
+                    <p class="text-gray-400">Transformando vidas a través del acceso al agua.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Contacto</h3>
+                    <p class="text-gray-400">omararquitect@gmail.com</p>
+                    <p class="text-gray-400">+52 722 173 6473</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Hipoteca Azul. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>
